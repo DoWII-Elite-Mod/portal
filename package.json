@@ -1,0 +1,51 @@
+{
+  "name": "elite-mod-portal",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "clean": "rimraf dist",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
+    "build-types": "tsc --noEmit --pretty",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.8",
+    "@types/react": "^18.0.25",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "eslint-plugin-tailwindcss": "^3.6.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-astro": "^0.7.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "astro": "1.6.7",
+    "astro-eslint-parser": "^0.9.0",
+    "astro-imagetools": "^0.6.11",
+    "astro-robots-txt": "^0.3.10",
+    "@astrojs/react": "^1.2.2",
+    "@astrojs/sitemap": "^1.0.0",
+    "@astrojs/tailwind": "^2.1.2",
+    "tailwindcss": "^3.2.4"
+  }
+}
