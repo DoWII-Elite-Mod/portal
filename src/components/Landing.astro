@@ -1,0 +1,38 @@
+---
+import { Picture } from '@astrojs/image/components';
+
+import spaceMarineHero from '@/assets/space-marine-hero.png';
+---
+
+<section>
+  <iframe
+    class="absolute top-1/2 left-1/2 w-full h-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+    src="https://www.youtube.com/embed/xp10jz-QSgc?controls=0&autoplay=1&mute=1&playsinline=1&playlist=xp10jz-QSgc&loop=1&start=7"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <div class="relative grid h-full sm:grid-cols-2 place-items-center">
+    <h2
+      class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto sm:justify-self-end"
+    >
+      <div
+        class="text-white font-extrabold tracking-tighter text-center text-8xl"
+      >
+        Landing page of Elitemod
+      </div>
+    </h2>
+    <div
+      class="self-start w-2/3 max-w-3xl sm:w-10/12 sm:self-auto sm:justify-self-start"
+    >
+      <Picture
+        aspectRatio={1}
+        class="object-cover w-full h-full relative"
+        src={spaceMarineHero}
+        widths={[650, 800]}
+        sizes="(min-width: 640px) 42vw, 67vw"
+        alt="Space Marine Hero Image"
+      />
+    </div>
+  </div>
+</section>
