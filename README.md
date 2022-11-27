@@ -8,3 +8,4 @@
 - 🦊 Husky
 - 🚫 lint-staged
 - 🚨 Commitlint
+- 🔼 Versel
