@@ -33,6 +33,8 @@ export default defineConfig({
     sitemap(),
     robotsTxt(),
     astroImageTools,
-    image()
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp'
+    })
   ]
 });
