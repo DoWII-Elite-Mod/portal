@@ -2,8 +2,6 @@
 import { Picture } from '@astrojs/image/components';
 import { Icon } from 'astro-icon';
 
-import spaceMarineHero from '@/assets/space-marine-hero.png';
-
 // <h2
 //       class="flex flex-col self-end gap-2 sm:gap-4 sm:self-auto sm:justify-self-end"
 //     >
@@ -36,7 +34,7 @@ import spaceMarineHero from '@/assets/space-marine-hero.png';
       <Picture
         aspectRatio={1}
         class="object-cover w-full h-full relative"
-        src={spaceMarineHero}
+        src="/static/space-marine-hero.png"
         widths={[650, 800]}
         sizes="(min-width: 640px) 42vw, 67vw"
         alt="Space Marine Hero Image"
