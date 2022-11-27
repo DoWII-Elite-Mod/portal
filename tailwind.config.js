@@ -5,6 +5,9 @@ module.exports = {
       backgroundImage: {
         'promo-one': "url('/static/sm.gif')"
       }
+    },
+    fontFamily: {
+      sans: ['Roboto Mono', 'sans-serif']
     }
   },
   plugins: []
