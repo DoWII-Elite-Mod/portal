@@ -1,4 +1,6 @@
 ---
+import Footer from '@/components/Footer.astro';
+import Navbar from '@/components/Navbar.astro';
 import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
@@ -13,7 +15,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<html lang="en">
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +26,11 @@ const {
     <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body class="bg-slate-900 text-gray-100">
+  <body
+    class="bg-gradient-to-tl from-gray-900 to-black flex flex-col min-h-screen"
+  >
+    <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
