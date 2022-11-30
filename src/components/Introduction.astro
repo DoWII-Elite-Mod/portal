@@ -1,0 +1,28 @@
+---
+import Section from '@/templates/Section.astro';
+import Card from './Card.astro';
+
+const pageElements = [
+  {
+    title: 'Play',
+    description: 'Download the Dawn of War II: Elite mod and join the games.'
+  },
+  {
+    title: 'Compete',
+    description:
+      'Get rated on our custom leaderboards or play in our monthly tournaments.'
+  },
+  {
+    title: 'Watch',
+    description: 'See live streams or browse 1600 shoutcasted Elite matches.'
+  }
+];
+---
+
+<Section title="Explore">
+  {
+    pageElements.map(({ title, description }) => (
+      <Card title={title} description={description} />
+    ))
+  }
+</Section>
