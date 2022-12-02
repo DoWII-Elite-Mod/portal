@@ -13,9 +13,11 @@ const { title, description, icon } = Astro.props;
     class="flex-1 justify-center text-center text-white bg-gray-800 rounded-t rounded-b-none overflow-hidden shadow"
   >
     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-      <div class="w-full flex flex-row items-center justify-center text-white font-extrabold text-xl px-6 py-4">
+      <div
+        class="w-full flex flex-row items-center justify-center text-white font-extrabold text-xl px-6 py-4"
+      >
         {title}
-        <img class='h-16' src={icon} />
+        <img class="h-16" src={icon} />
       </div>
       <p class="text-white text-base px-6 mb-5">
         {description}
