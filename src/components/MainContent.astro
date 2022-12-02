@@ -1,13 +1,7 @@
 ---
-import Article from '@/components/Article.astro';
 import Ladder from '@/components/Ladder/Ladder.astro';
-
-const articles = Array.apply(null, Array(3)).map(_ => ({
-  title: 'Lorem ipsum dolor',
-  content:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus consectetur perspiciatis corrupti officia laboriosam quisquam? Ipsa tempora laborum voluptate. Explicabo temporibus repudiandae ea! Iure delectus inventore quaerat soluta nesciunt quidem.',
-  date: 'September 5, 2022'
-}));
+import Article from '@/components/Article.astro'
+import { articles } from '@/utils';
 ---
 
 <!-- TODO: remove margin bottom later -->
@@ -20,8 +14,13 @@ const articles = Array.apply(null, Array(3)).map(_ => ({
         >
           <div class="flex flex-col gap-16">
             {
-              articles.map(({ title, content, date }) => (
-                <Article title={title} content={content} date={date} />
+              articles.map(({ title, content, date, tournament }) => (
+                <Article
+                  title={title}
+                  content={content}
+                  date={date}
+                  tournament={tournament}
+                />
               ))
             }
           </div>
