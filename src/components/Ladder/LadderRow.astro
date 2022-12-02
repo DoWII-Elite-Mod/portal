@@ -1,0 +1,41 @@
+---
+import playIcon from '../../../public/static/sta_terminator_honors_large.png';
+
+interface Props {
+  name: string;
+  race: string;
+  wins: number;
+  loses: number;
+}
+
+const { name, race, wins, loses } = Astro.props;
+---
+
+<li class="flex gap-4">
+  <div
+    class="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+  >
+    <img class="w-12" src={playIcon} />
+  </div>
+  <dl class="flex flex-auto flex-wrap gap-x-2">
+    <dt class="sr-only">Username</dt>
+    <dd
+      class="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100"
+    >
+      {name}
+    </dd>
+    <dt class="sr-only">Role</dt><dd
+      class="text-xs text-zinc-500 dark:text-zinc-400"
+    >
+      {race}
+    </dd>
+    <dt class="sr-only">winratio</dt><dd
+      class="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
+      aria-label="win-lose streak"
+    >
+      <span class="text-green-500">{wins}</span>
+      <span aria-hidden="true">—</span>
+      <span class="text-red-500">{loses}</span>
+    </dd>
+  </dl>
+</li>
