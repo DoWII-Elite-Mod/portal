@@ -1,14 +1,13 @@
 ---
 import Landing from '@/components/Landing.astro';
-import Introduction from '@/components/Introduction.astro';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
+import MainContent from '@/components/MainContent.astro';
 
 const { title } = AppConfig;
 const { description } = AppConfig;
 ---
-
 <Base head={{ title, description }}>
   <Landing />
-  <Introduction />
+  <MainContent />
 </Base>
