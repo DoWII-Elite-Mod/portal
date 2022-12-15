@@ -1,0 +1,219 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dawn of War II: Elite Mod API",
+    "description": "API specification of the new Elite Mod server",
+    "version": "0.0.1"
+  },
+  "paths": {
+    "/players": {
+      "get": {
+        "description": "Get a list of known players",
+        "responses": {
+          "200": {
+            "description": "List of known players"
+          }
+        }
+      }
+    },
+    "/matches": {
+      "get": {
+        "description": "Get a list of matches",
+        "responses": {
+          "200": {
+            "description": "List of matches"
+          }
+        }
+      }
+    },
+    "/ladder": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Pageable list of players and their rank, winrate, main race, games played, etc."
+          }
+        }
+      }
+    },
+    "/reporter": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Get version information so the reporter tool can update itself if necessary"
+          }
+        }
+      },
+      "post": {
+        "summary": "Upload a new replay with corresponding meta information",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/replay_info"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Sending replay was successful"
+          },
+          "400": {
+            "description": "The replay was rejected because of a malformed query"
+          },
+          "422": {
+            "description": "The replay was rejected due to validation issues of the file itself"
+          },
+          "500": {
+            "description": "The server experienced an unknown error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "replay_info": {
+        "description": "The replay file including meta information describing outcome, players, map, etc.",
+        "type": "object",
+        "properties": {
+          "aborted": {
+            "description": "Was the match prematurely aborted or not",
+            "type": "boolean"
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "player": {
+                  "type": "string"
+                },
+                "relic_id": {
+                  "type": "number"
+                },
+                "tick": {
+                  "type": "number"
+                },
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          },
+          "dev": {
+            "type": "boolean"
+          },
+          "id": {
+            "description": "Relic match id of the replay/match",
+            "type": "string"
+          },
+          "map": {
+            "description": "What map was the match played on",
+            "type": "string"
+          },
+          "reporter": {
+            "description": "Meta information about the reporter tool used to report the match",
+            "type": "object",
+            "properties": {
+              "date": {
+                "description": "When was the match reported",
+                "type": "string"
+              },
+              "version": {
+                "description": "Version of the reporter tool used to report the match",
+                "type": "string"
+              }
+            }
+          },
+          "replay": {
+            "type": "string",
+            "description": "The replay in Base64 representation"
+          },
+          "mod_version": {
+            "type": "number"
+          },
+          "ranked": {
+            "description": "Was the match in question ranked or not",
+            "type": "boolean"
+          },
+          "league": {
+            "description": "Was the match in question a league match",
+            "type": "boolean"
+          },
+          "frames": {
+            "description": "Number of ticks/frames reported in the games logfile (warnings.txt)",
+            "type": "number"
+          },
+          "ticks": {
+            "description": "Number of ticks/frames parsed from the replay file itself",
+            "type": "number"
+          },
+          "players": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "relic_id": {
+                  "type": "string"
+                },
+                "hero": {
+                  "type": "number"
+                },
+                "race": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "steam_id": {
+                  "type": "number"
+                },
+                "team": {
+                  "type": "number"
+                },
+                "sim_id": {
+                  "type": "number"
+                },
+                "slot": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "messages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "receiver": {
+                  "type": "string"
+                },
+                "sender": {
+                  "type": "string"
+                },
+                "body": {
+                  "type": "string"
+                },
+                "tick": {
+                  "type": "number"
+                },
+                "player_id": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "winner": {
+            "description": "Which team won",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}
