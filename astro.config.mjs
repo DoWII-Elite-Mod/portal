@@ -9,7 +9,11 @@ import { astroImageTools } from 'astro-imagetools';
 import image from '@astrojs/image';
 
 // https://astro.build/config
+import node from "@astrojs/node";
+
+// https://astro.build/config
 export default defineConfig({
+  output: 'server',
   // base: '.', // Set a path prefix.
   site: 'https://example.com/',
   // Use to generate your sitemap and canonical URLs in your final build.
@@ -27,14 +31,8 @@ export default defineConfig({
       theme: 'monokai'
     }
   },
-  integrations: [
-    react(),
-    tailwind({}),
-    sitemap(),
-    robotsTxt(),
-    astroImageTools,
-    image({
-      serviceEntryPoint: '@astrojs/image/sharp'
-    })
-  ]
+  integrations: [react(), tailwind({}), sitemap(), robotsTxt(), astroImageTools, image({
+    serviceEntryPoint: '@astrojs/image/sharp'
+  })],
+  adapter: node({ mode: 'standalone' })
 });
