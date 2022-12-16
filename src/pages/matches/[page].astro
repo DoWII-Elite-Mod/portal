@@ -1,0 +1,43 @@
+---
+import Base from '@/templates/Base.astro';
+import Section from '@/templates/Section.astro';
+import { AppConfig } from '@/utils';
+import { Matches } from '@/utils/Database';
+
+export async function get(page: number) {
+  const matches = await Matches();
+
+  let size = 25;
+  let totalElements = await matches.countDocuments();
+  let data = await matches.find({}).sort('_id', -1).skip((page - 1) * size).limit(size).toArray();
+
+  return { content: [...data], size, totalElements };  
+}
+
+const { page } = Astro.params;
+let { content, size, totalElements } = await get((page ?? 1) as unknown as number);
+let matches_mapped = content.map(match => {
+  return {
+    map: match.map,
+    id: match.id,
+    players: match.players,
+    date: match.reporter?.date,
+    ticks: match.frames,
+  }
+})
+
+const { title } = AppConfig;
+---
+
+<Base head={{ title, description: ''}}>
+<Section title={ 'List of matches' }>
+  <h1>Data</h1>
+  <h3>Page size {size}</h3>
+  <h3>Number of pages {Math.ceil(totalElements / size)}</h3>
+  <h3>Total Elements {totalElements}</h3>
+  { matches_mapped?.map(p => <div>
+    <pre>{JSON.stringify(p, undefined, 2)}</pre>
+    <a href={`/match/${p.id}`}>Link</a>
+    </div>)}
+</Section>
+</Base>

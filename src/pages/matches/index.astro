@@ -1,0 +1,25 @@
+---
+import Base from '@/templates/Base.astro';
+import Section from '@/templates/Section.astro';
+import { AppConfig } from '@/utils';
+
+const { title, description } = AppConfig;
+---
+
+<Base head={{ title, description }}>
+  <Section title={''}>
+    <h1>Matches landing page</h1>
+    <section>
+      Most active time of the day <br>
+      Games played <br>
+      Most recent matches <br>
+      Most played maps <br>
+      Most played race <br>
+      Most played hero <br>
+      Average game length <br>
+      Hero vs Hero winrate <br>
+      Hero winrates <br>
+    </section>
+    <a href="/matches/1">List</a>
+  </Section>
+</Base>

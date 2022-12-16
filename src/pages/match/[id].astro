@@ -1,0 +1,22 @@
+---
+import Base from '@/templates/Base.astro';
+import Section from '@/templates/Section.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { Matches } from '@/utils/Database';
+
+const { id } = Astro.params;
+const { title, description } = AppConfig;
+
+const matches = await Matches();
+
+let match = await matches.findOne({ id: parseInt(id as string) });
+---
+
+<Base head={{ title, description } }>
+<Section title='Match details'>
+  <h1>Match Details for {id}</h1>
+  <span>
+    <pre class="">{JSON.stringify(match, undefined, 2)}</pre>
+  </span>
+</Section>
+</Base>
