@@ -10,5 +10,7 @@ module.exports = {
       sans: ['Roboto Mono', 'sans-serif']
     }
   },
-  plugins: []
+  // TODO: refactor unexpected require
+  // eslint-disable-next-line global-require
+  plugins: [require('daisyui')]
 };
