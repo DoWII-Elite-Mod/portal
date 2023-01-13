@@ -6,7 +6,31 @@ const navigationItems = ['Codex', 'Ladder', 'Elite', 'Forum'];
 
 <div class="navbar bg-gray-900 px-4 md:px-8">
   <div class="navbar-start">
-    <div class="dropdown">
+    <a href="https://dawnofwar.info/" class="flex items-center">
+      <img src={badge} class="h-10 mr-3 sm:h-9" alt="Elitemod Logo" />
+      <span
+        class="self-center text-xl font-semibold whitespace-nowrap text-white"
+      >
+        Elitemod
+      </span>
+    </a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      {
+        navigationItems.map(item => (
+          <li>
+            <a>{item}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <a class="btn invisible sm:visible text-white bg-blue-700"
+      >Download Elitemod</a
+    >
+    <div class="dropdown dropdown-end">
       <label
         tabindex="0"
         class="btn btn-ghost focus:bg-blue-700 mr-2 lg:hidden"
@@ -37,27 +61,5 @@ const navigationItems = ['Codex', 'Ladder', 'Elite', 'Forum'];
         }
       </ul>
     </div>
-    <a href="https://dawnofwar.info/" class="flex items-center">
-      <img src={badge} class="h-10 mr-3 sm:h-9" alt="Elitemod Logo" />
-      <span
-        class="self-center text-xl font-semibold whitespace-nowrap text-white"
-      >
-        Elitemod
-      </span>
-    </a>
-  </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      {
-        navigationItems.map(item => (
-          <li>
-            <a>{item}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <a class="btn text-white bg-blue-700">Download Elitemod</a>
   </div>
 </div>

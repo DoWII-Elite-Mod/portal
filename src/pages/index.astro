@@ -1,5 +1,5 @@
 ---
-import Landing from '@/components/Landing.astro';
+import Hero from '@/components/Hero.astro';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
 import MainContent from '@/components/MainContent.astro';
@@ -10,7 +10,7 @@ const { description } = AppConfig;
 
 <Base head={{ title, description }}>
   <section class="p-4 md:p-8">
-    <Landing />
+    <Hero />
     <MainContent />
   </section>
 </Base>
