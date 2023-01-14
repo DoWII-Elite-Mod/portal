@@ -1,5 +1,5 @@
 ---
-import playIcon from '../../../public/static/sta_terminator_honors_large.png';
+import { faker } from '@faker-js/faker';
 
 interface Props {
   position: number;
@@ -20,7 +20,7 @@ const { position, name, race, rating, winRatio } = Astro.props;
     <a>
       <img
         class="inline-block w-6 h-6 rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
-        src={playIcon}
+        src={faker.image.avatar()}
       />
     </a>
     <a class="whitespace-nowrap">

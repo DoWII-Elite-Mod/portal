@@ -1,0 +1,35 @@
+---
+import { dowIcons } from '@/shared/consts';
+import { getRandomFromArray } from '@/utils';
+
+interface Props {
+  header: string;
+  title: string;
+  dateTime: string;
+}
+
+const { header, title, dateTime } = Astro.props;
+---
+
+<div
+  class="cursor-pointer hover:bg-gray-800 overflow-hidden relative border-2 rounded-2xl w-full transition bg-custom-orange-800 from-custom-orange-900 to-custom-orange-600 border-custom-orange-500 hover:border-custom-orange-300 basis-1/2"
+>
+  <div
+    class="absolute top-0 left-0 bottom-0 right-0 opacity-80 brightness-75 contrast-150 mix-blend-multiply saturate-0 bg-center bg-cover bg-no-repeat"
+  >
+  </div><a
+    class="p-3 sm:p-8 flex flex-col lg:flex-row items-center justify-center h-full lg:h-auto relative"
+    rel="noreferer noopener"
+    target="_blank"
+    ><img
+      class="object-contain h-24 w-24 flex-none rounded"
+      src={getRandomFromArray(dowIcons)}
+    /><div class="px-8 flex-auto">
+      <h4 class="font-black text-sm uppercase opacity-60">
+        {header}
+      </h4><h2 class="font-black text-xl">{title}</h2><div>
+        {dateTime}
+      </div>
+    </div>
+  </a>
+</div>

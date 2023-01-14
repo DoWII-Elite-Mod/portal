@@ -1,68 +1,57 @@
 ---
 import { Icon } from 'astro-icon';
-import badge from '@/assets/badge.png';
+import HeroCard from './HeroCard.astro';
+
+const cards = [
+  {
+    header: 'current elitemod patch',
+    title: 'v2.9.8.4 Released',
+    dateTime: 'January 3rd, 2023'
+  },
+  {
+    header: '$1000 1v1 Tournament',
+    title: 'Faction Waaagh!',
+    dateTime: 'January 20th - 22nd'
+  }
+];
 ---
 
-<section
-  class="flex flex-col sm:w-auto sm:flex-col lg:flex-row gap-3 sm:gap-8 mb-4 md:mb-8"
->
+<section class="overflow-auto sm:overflow-hidden mb-4 md:mb-8">
   <div
-    class="relative md:max-w-5xl max-w-2xl bg-promo-one bg-no-repeat bg-cover border-2 rounded-2xl border-zinc-500 flex flex-col py-5 justify-between px-4 sm:px-8 lg:px-12"
+    class="flex sm:w-auto flex-row sm:flex-col lg:flex-row mb-0 gap-3 sm:gap-8 sm:mb-0 w-[270%]"
   >
-    <h1
-      class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
-    >
-      Elitemod Official
-    </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate optio
-      hic aperiam molestiae doloribus dolorem tempore repellat ad voluptas
-      corrupti, harum nemo delectus, ducimus recusandae esse sit molestias!
-      Ratione, sunt?
-    </p>
-    <div class="flex flex-row gap-6">
-      <Icon class="h-10 text-white" name="mdi:discord" />
-      <Icon class="h-10 text-white" name="mdi:twitch" />
-    </div>
-  </div>
-  <div class="flex-auto flex flex-row lg:flex-col gap-3 sm:gap-8 grow-0 w-full">
     <div
-      class="overflow-hidden relative border-2 rounded-2xl w-full transition hover:bg-gray-900 border-zinc-500 hover:border-white basis-1/2"
+      class="border-2 rounded-2xl border-zinc-500 relative flex h-auto w-full overflow-hidden basis-1/3 md:basis-1/2 lg:basis-3/5 xl:basis-3/5"
     >
-      <a
-        class="p-3 sm:p-8 flex flex-col lg:flex-row items-center justify-center h-full lg:h-auto relative"
-        href="https://dawnofwar.info"
-        rel="noreferer noopener"
-        target="_blank"
-        ><img
-          class="object-contain h-24 w-24 flex-none rounded"
-          src={badge}
-        /><div class="px-8 flex-auto">
-          <h4 class="font-black text-sm uppercase opacity-60">
-            200€ 1v1 Tournament
-          </h4><h2 class="font-black text-xl">Faction Waaagh!</h2><div>
-            January 20th - 22nd
-          </div>
+      <div
+        class="bg-promo-one bg-no-repeat absolute inset-0 bg-cover opacity-30"
+      >
+      </div>
+      <div class="relative p-8 flex flex-col gap-6 justify-evenly">
+        <h1
+          class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl"
+        >
+          Elitemod Official
+        </h1><p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate
+          optio hic aperiam molestiae doloribus dolorem tempore repellat ad
+          voluptas corrupti, harum nemo delectus, ducimus recusandae esse sit
+          molestias! Ratione, sunt?
+        </p>
+        <div class="flex flex-row gap-6">
+          <Icon class="h-10 text-white" name="mdi:discord" />
+          <Icon class="h-10 text-white" name="mdi:twitch" />
         </div>
-      </a>
-    </div><div
-      class="overflow-hidden relative border-2 rounded-2xl w-full transition hover:bg-gray-900 border-zinc-500 hover:border-white basis-1/2"
+      </div>
+    </div>
+    <div
+      class="flex-auto flex flex-row lg:flex-col gap-3 sm:gap-8 grow-0 w-full basis-2/3 sm:basis-1/2 lg:basis-2/5"
     >
-      <a
-        class="p-3 sm:p-8 flex flex-col lg:flex-row items-center justify-center h-full lg:h-auto relative"
-        href="https://dawnofwar.info"
-        rel="noreferer noopener"
-        target="_blank"
-        ><img
-          class="object-contain h-24 w-24 flex-none rounded"
-          src={badge}
-        /><div class="px-8 flex-auto">
-          <h4 class="font-black text-sm uppercase opacity-60">
-            $1000 1v1 Tournament
-          </h4><div class="font-black text-xl">Nomad Clash</div><div>
-            January 7th - 8th
-          </div>
-        </div>
-      </a>
+      {
+        cards.map(({ header, title, dateTime }) => (
+          <HeroCard header={header} title={title} dateTime={dateTime} />
+        ))
+      }
     </div>
   </div>
 </section>
