@@ -12,7 +12,7 @@ interface Props {
 const { position, name, race, rating, winRatio } = Astro.props;
 ---
 
-<tr class="transition hover:bg-gray-800">
+<tr class="transition hover:bg-gray-800 group">
   <td class="text-right text-gray-300 font-bold pr-3 pl-3 w-0 sm:pl-8"
     >{position}</td
   >
@@ -25,7 +25,7 @@ const { position, name, race, rating, winRatio } = Astro.props;
     </a>
     <a class="whitespace-nowrap">
       <span
-        class="underline-offset-2 text-lg font-bold text-white whitespace-nowrap hover:underline"
+        class="cursor-pointer underline-offset-2 text-lg font-bold text-white whitespace-nowrap hover:underline"
       >
         {name}
       </span>
@@ -35,5 +35,5 @@ const { position, name, race, rating, winRatio } = Astro.props;
   <td class="text-gray-200 px-3 w-12">
     {rating}
   </td>
-  <td class="text-gray-200 px-3 w-12">{winRatio} %</td>
+  <td class="text-gray-200 pl-3 pr-3 w-auto sm:pr-8">{winRatio} %</td>
 </tr>
