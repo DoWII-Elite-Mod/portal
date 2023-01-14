@@ -1,37 +1,68 @@
 ---
 import { Icon } from 'astro-icon';
 import LadderRow from './LadderRow.astro';
+import { faker } from '@faker-js/faker';
 
 // API call
-const players = [
-  { name: 'Lorem', race: 'Space Marines', wins: 100, loses: 50 },
-  { name: 'Ipsum', race: 'Orks', wins: 85, loses: 60 },
-  { name: 'Lorem', race: 'Eldars', wins: 100, loses: 50 },
-  { name: 'Lorem', race: 'Chaos Space Marines', wins: 100, loses: 50 },
-  { name: 'Lorem', race: 'Tyranids', wins: 100, loses: 50 }
+
+const races = [
+  'Space Marines',
+  'Chaos Space Marines',
+  'Tyranids',
+  'Orks',
+  'Eldars'
 ];
+
+const getRandomFromArray = (arr: string[]) =>
+  arr[Math.floor(Math.random() * arr.length)] ?? '';
+
+const players = [1, 2, 3, 4, 5, 6, 7, 8, 9].map(_ => ({
+  name: faker.name.firstName(),
+  race: getRandomFromArray(races),
+  rating: faker.datatype.number({ min: 500, max: 3000 }),
+  winRatio: faker.datatype.number({ min: 20, max: 100 })
+}));
 ---
 
-<div class="space-y-10">
-  <div class="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
-    <h2
-      class="flex flex-row items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100"
-    >
-      <Icon class="h-12" name="mdi:trophy" />
-      <span class="ml-3">Ladder</span>
-    </h2>
-    <ol class="mt-6 space-y-4">
-      {
-        players.map(({ name, race, wins, loses }) => (
-          <LadderRow name={name} race={race} wins={wins} loses={loses} />
-        ))
-      }
-    </ol>
-    <a
-      class="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
-      href="/#"
-      >Show more
-      <Icon class="h-5" name="mdi:arrow-up" />
-    </a>
+<div class="rounded-3xl border border-gray-900 bg-gray-900 p-6">
+  <h2
+    class="flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100"
+  >
+    <Icon class="h-12" name="mdi:trophy" />
+    <span class="ml-3">Ladder</span>
+  </h2>
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full whitespace-nowrap">
+      <thead>
+        <tr class="text-gray-400 text-left text-sm uppercase tracking-wider">
+          <th class="font-normal text-right pr-3">#</th>
+          <th class="font-normal">Nickname</th>
+          <th class="font-normal px-3">Fraction</th>
+          <th class="font-normal px-3">Rating</th>
+          <th class="font-normal px-3">Win %</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          players
+            .sort((first, second) => second.rating - first.rating)
+            .map(({ name, race, rating, winRatio }, index) => (
+              <LadderRow
+                position={index + 1}
+                name={name}
+                race={race}
+                rating={rating}
+                winRatio={winRatio}
+              />
+            ))
+        }
+      </tbody>
+    </table>
   </div>
+  <a
+    class="btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full"
+    href="/#"
+    >Show more
+    <Icon class="h-5" name="mdi:arrow-up" />
+  </a>
 </div>

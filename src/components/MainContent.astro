@@ -1,11 +1,21 @@
 ---
 import Ladder from '@/components/Ladder/Ladder.astro';
+import { articles } from '@/utils';
+import Article from './Article.astro';
 ---
 
-<section>
-  <div
-    class="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2"
-  >
-    <Ladder />
+<section class="flex flex-col lg:flex-row gap-3 sm:gap-8">
+  <Ladder />
+  <div class="rounded-3xl overflow-hidden flex-auto flex flex-col basis-2/5">
+    {
+      articles.map(({ title, content, date, tournament }) => (
+        <Article
+          title={title}
+          content={content}
+          date={date}
+          tournament={tournament}
+        />
+      ))
+    }
   </div>
 </section>
