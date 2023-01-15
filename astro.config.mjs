@@ -1,15 +1,17 @@
+// https://astro.build/config
+
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import robotsTxt from 'astro-robots-txt';
 import { astroImageTools } from 'astro-imagetools';
-
-// https://astro.build/config
 import image from '@astrojs/image';
+import vercel from '@astrojs/vercel/serverless';
 
-// https://astro.build/config
 export default defineConfig({
+  output: 'server',
+  adapter: vercel(),
   // base: '.', // Set a path prefix.
   site: 'https://example.com/',
   // Use to generate your sitemap and canonical URLs in your final build.

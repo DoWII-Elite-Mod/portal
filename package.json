@@ -44,6 +44,7 @@
     "@astrojs/react": "^1.2.2",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.1.2",
+    "@astrojs/vercel": "^2.4.0",
     "astro": "1.6.7",
     "astro-eslint-parser": "^0.9.0",
     "astro-icon": "^0.8.0",
