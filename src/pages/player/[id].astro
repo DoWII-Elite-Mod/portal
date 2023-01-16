@@ -1,4 +1,5 @@
 ---
+import Banner from '@/components/Player/Banner.astro';
 import Base from '@/templates/Base.astro';
 
 const { id } = Astro.params;
@@ -10,9 +11,7 @@ const meta = {
 ---
 
 <Base head={meta}>
-  <main class="p-4 md:p-8">
-    <div class="max-w-screen-2xl mx-auto">
-      <div>{id}</div>
-    </div>
+  <main class="pb-20 2xl:py-0 bg-gray-800">
+    <Banner />
   </main>
 </Base>
