@@ -2,41 +2,40 @@
 import { faker } from '@faker-js/faker';
 import { Icon } from 'astro-icon';
 ---
-<div class="relative w-full -mb-20 pb-12 md:pb-8">
-    <div class="absolute top-0 left-0 right-0 h-full max-h-44">
-      <div
-        class="absolute inset-0 opacity-40 bg-cover bg-top"
-        style={`background-image: url(https://i.alza.cz/Foto/ImgGalery/Image/warhammer-40000-space-marine-2-cover-bez-loga-pozadi.jpg); background-position: center;`}
-      >
-      </div><div
-        class="absolute inset-0 max-w-lg bg-gradient-to-r from-gray-800"
-      >
-      </div><div
-        class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800"
-      >
-      </div>
-    </div><div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
-      <div class="flex items-center flex-wrap gap-6">
-        <a href="#"
-          ><img
-            class="w-24 h-24 rounded object-cover"
-            src={faker.image.imageUrl()}
-          />
-        </a><div class="text-white flex-auto">
-          <div class="flex items-center gap-2">
-            <a class="text-4xl mr-2 font-bold">{faker.name.fullName()}</a><a
-              class="hover:opacity-80 transition"
-              rel="noreferrer noopener"
-              target="_blank"
-              ><Icon class="h-10" name="mdi:twitch" />
-            </a><a
-              class="hover:opacity-80 transition"
-              rel="noreferrer noopener"
-              target="_blank"
-              ><Icon class="h-10" name="mdi:youtube" />
-            </a>
-          </div>
+
+<div class="relative w-full -mb-2 pb-12 md:pb-8">
+  <div class="absolute top-0 left-0 right-0 h-full max-h-44">
+    <div
+      class="absolute inset-0 opacity-40 bg-cover bg-top"
+      style={`background-image: url(https://i.alza.cz/Foto/ImgGalery/Image/warhammer-40000-space-marine-2-cover-bez-loga-pozadi.jpg); background-position: center;`}
+    >
+    </div><div class="absolute inset-0 max-w-lg bg-gradient-to-r from-gray-800">
+    </div><div
+      class="absolute inset-0 bg-gradient-to-b from-transparent to-gray-800"
+    >
+    </div>
+  </div><div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
+    <div class="flex items-center flex-wrap gap-6">
+      <a href="#"
+        ><img
+          class="w-24 h-24 rounded object-cover"
+          src={faker.image.imageUrl()}
+        />
+      </a><div class="text-white flex-auto">
+        <div class="flex items-center gap-2">
+          <a class="text-4xl mr-2 font-bold">{faker.name.fullName()}</a><a
+            class="hover:opacity-80 transition"
+            rel="noreferrer noopener"
+            target="_blank"
+            ><Icon class="h-10" name="mdi:twitch" />
+          </a><a
+            class="hover:opacity-80 transition"
+            rel="noreferrer noopener"
+            target="_blank"
+            ><Icon class="h-10" name="mdi:youtube" />
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>

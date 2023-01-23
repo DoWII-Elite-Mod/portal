@@ -1,5 +1,6 @@
 ---
 import Banner from '@/components/Player/Banner.astro';
+import RecentGames from '@/components/Player/RecentGames.astro';
 import Base from '@/templates/Base.astro';
 
 const { id } = Astro.params;
@@ -13,5 +14,6 @@ const meta = {
 <Base head={meta}>
   <main class="pb-20 2xl:py-0 bg-gray-800">
     <Banner />
+    <RecentGames />
   </main>
 </Base>
