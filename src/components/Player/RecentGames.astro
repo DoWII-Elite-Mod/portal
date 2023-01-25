@@ -10,7 +10,7 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
   mode: '1v1',
   result: 'Win',
   duration: `${faker.datatype.number({ min: 1, max: 100 })}m`,
-  date: faker.date.past(),
+  date: faker.date.past()
 }));
 ---
 
@@ -27,7 +27,7 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
         <thead>
           <tr class='text-gray-400 text-left text-sm uppercase tracking-wider'>
             <th class='font-normal text-right pr-3'>#</th>
-            <th class='font-normal pr-20'>Map / Result / Mode / Duration</th>
+            <th class='font-normal pr-20'>Map / Mode / Duration / Result</th>
             <th class='font-normal'>Player</th>
             <th class='font-normal px-2'></th>
             <th class='font-normal'>Opponent</th>

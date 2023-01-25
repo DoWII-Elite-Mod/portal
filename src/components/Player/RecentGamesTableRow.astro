@@ -20,13 +20,14 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
 
   <td class='flex gap-3 items-center py-5 pr-6 w-auto'>
     <img
-      class='inline-block w-20 h-20 rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+      alt=''
+      class='w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
       src={faker.image.food()}
     />
     <div>
       <div class='font-bold text-yellow-800 whitespace-nowrap'>{map}</div>
       <div class='text-sm'>
-        <span class='text-green-300 font-bold'>{result}</span> - {mode} - {duration}
+        {mode} - {duration} - <span class='text-green-300 font-bold'>{result}</span>
       </div>
     </div>
   </td>
@@ -34,7 +35,8 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   <td class='px-3 w-auto sm:pr-8'>
     <span>
       <img
-        class='inline-block w-8 h-8 rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+        alt=''
+        class='w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
         src={faker.image.animals()}
       />
     </span>
@@ -68,7 +70,8 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   <td class='px-3 w-auto sm:pr-8'>
     <span>
       <img
-        class='inline-block w-8 h-8 rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+        alt=''
+        class='w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
         src={faker.image.animals()}
       />
     </span>

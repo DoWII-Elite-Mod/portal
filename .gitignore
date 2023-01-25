@@ -105,3 +105,6 @@ dist
 
 # Intelij files
 .idea
+
+# Vercel build assets
+.vercel
