@@ -1,65 +1,64 @@
 ---
 import { Icon } from 'astro-icon';
-import LadderRow from '../Ladder/LadderRow.astro';
+import RecentGamesTableRow from './RecentGamesTableRow.astro';
 import { faker } from '@faker-js/faker';
-import { getRandomFromArray } from '@/utils';
-import { fractions } from '@/shared/consts';
 
 // API call
-const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map(_ => ({
+const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
   name: faker.name.fullName(),
-  race: getRandomFromArray(fractions),
-  rating: faker.datatype.number({ min: 500, max: 3000 }),
-  winRatio: faker.datatype.number({ min: 20, max: 100 })
+  map: faker.address.city(),
+  mode: '1v1',
+  result: 'Win',
+  duration: `${faker.datatype.number({ min: 1, max: 100 })}m`,
+  date: faker.date.past(),
 }));
 ---
 
-<div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
-  <div
-    class="rounded-3xl border border-gray-900 bg-gray-900 overflow-hidden flex-auto basis-3/5"
-  >
-    <div
-      class="py-8 px-6 flex flex-col gap-5 sm:p-8 md:flex-row md:items-center"
-    >
-      <h2
-        class="flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100"
-      >
-        <Icon class="h-12" name="mdi:clipboard-text-date-outline" />
-        <span class="ml-3">Recent Games</span>
+<div class='p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative'>
+  <div class='rounded-3xl border border-gray-900 bg-gray-900 overflow-hidden flex-auto basis-3/5'>
+    <div class='py-8 px-6 flex flex-col gap-5 sm:p-8 md:flex-row md:items-center'>
+      <h2 class='flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100'>
+        <Icon class='h-12' name='mdi:clipboard-text-date-outline' />
+        <span class='ml-3'>Recent Games</span>
       </h2>
     </div>
-    <div class="overflow-x-auto">
-      <table class="table-auto w-full whitespace-nowrap">
+    <div class='overflow-x-auto'>
+      <table class='table-auto w-full whitespace-nowrap'>
         <thead>
-          <tr class="text-gray-400 text-left text-sm uppercase tracking-wider">
-            <th class="font-normal text-right pr-3">#</th>
-            <th class="font-normal">Map / Mode</th>
-            <th class="font-normal">Map / Mode</th>
-            <th class="font-normal px-3">Fraction</th>
-            <th class="font-normal px-3">Rating</th>
-            <th class="font-normal px-3">Date</th>
+          <tr class='text-gray-400 text-left text-sm uppercase tracking-wider'>
+            <th class='font-normal text-right pr-3'>#</th>
+            <th class='font-normal pr-20'>Map / Result / Mode / Duration</th>
+            <th class='font-normal'>Player</th>
+            <th class='font-normal px-2'></th>
+            <th class='font-normal'>Opponent</th>
+            <th class='font-normal px-3'>Date</th>
+            <th class='font-normal px-3'></th>
           </tr>
         </thead>
         <tbody>
           {
-            players.map(({ name, race, rating, winRatio }, index) => (
-              <LadderRow
-                position={index + 1}
-                name={name}
-                race={race}
-                rating={rating}
-                winRatio={winRatio}
-              />
-            ))
+            players
+              .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+              .map(({ name, date, map, mode, duration, result }, index) => (
+                <RecentGamesTableRow
+                  position={index + 1}
+                  name={name}
+                  result={result}
+                  date={date}
+                  map={map}
+                  mode={mode}
+                  duration={duration}
+                />
+              ))
           }
         </tbody>
       </table>
     </div>
     <a
-      class="btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full"
-      href="/#"
+      class='btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full'
+      href='/#'
       >Show more games
-      <Icon class="h-5" name="mdi:arrow-right" />
+      <Icon class='h-5' name='mdi:arrow-right' />
     </a>
   </div>
 </div>
