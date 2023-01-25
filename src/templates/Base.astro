@@ -15,28 +15,26 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" class="motion-safe:scroll-smooth" data-theme="dark">
+<html lang='en' class='motion-safe:scroll-smooth' data-theme='dark'>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta name="author" content={AppConfig.author} />
+    <meta name='description' content={description} />
+    <meta name='author' content={AppConfig.author} />
 
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
 
     <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200&display=swap"
-      rel="stylesheet"
+      href='https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200&display=swap'
+      rel='stylesheet'
     />
   </head>
-  <body
-    class="bg-gradient-to-tl from-gray-900 to-black flex flex-col bg-zinc-50"
-  >
+  <body class='bg-gradient-to-tl from-gray-900 to-black flex flex-col bg-zinc-50'>
     <Navbar />
     <slot />
     <Footer />
