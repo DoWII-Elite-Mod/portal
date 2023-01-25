@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "clean": "rimraf dist",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,astro}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,astro}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,astro,scss} --config ./.prettierrc",
     "build-types": "tsc --noEmit --pretty",
     "prepare": "husky install"
   },
@@ -57,7 +59,7 @@
     "tailwindcss": "^3.2.4"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro}": "eslint --cache --fix",
-    "*.{js,jsx,ts,tsx,astro,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,astro}": "npm run lint",
+    "*.{js,jsx,ts,tsx,astro,md}": "npm run format"
   }
 }
