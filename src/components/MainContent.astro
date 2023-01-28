@@ -10,7 +10,12 @@ import Article from './Article.astro';
     <div class='rounded-3xl overflow-hidden flex-auto flex flex-col basis-2/5'>
       {
         articles.map(({ title, content, date, tournament }) => (
-          <Article title={title} content={content} date={date} tournament={tournament} />
+          <Article
+            title={title}
+            content={content}
+            date={date}
+            tournament={tournament}
+          />
         ))
       }
     </div>

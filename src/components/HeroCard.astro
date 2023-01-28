@@ -1,8 +1,6 @@
 ---
 import { dowIcons } from '@/shared/consts';
 import { getRandomFromArray } from '@/utils';
-import { Image } from '@astrojs/image/components';
-
 interface Props {
   header: string;
   title: string;
@@ -18,18 +16,19 @@ const { header, title, dateTime } = Astro.props;
   <div
     class='absolute top-0 left-0 bottom-0 right-0 opacity-80 brightness-75 contrast-150 mix-blend-multiply saturate-0 bg-center bg-cover bg-no-repeat'
   >
-  </div><a
+  </div>
+  <a
     class='p-3 sm:p-8 flex flex-col lg:flex-row items-center justify-center h-full lg:h-auto relative'
-    ><img
+  >
+    <img
       class='w-24 h-24 object-contain flex-none rounded'
       alt=''
       src={getRandomFromArray(dowIcons)}
-    /><div class='px-8 flex-auto'>
-      <h4 class='font-black text-sm uppercase opacity-60'>
-        {header}
-      </h4><h2 class='font-black text-xl'>{title}</h2><div>
-        {dateTime}
-      </div>
+    />
+    <div class='px-8 flex-auto'>
+      <h4 class='font-black text-sm uppercase opacity-60'>{header}</h4>
+      <h2 class='font-black text-xl'>{title}</h2>
+      <div>{dateTime}</div>
     </div>
   </a>
 </div>
