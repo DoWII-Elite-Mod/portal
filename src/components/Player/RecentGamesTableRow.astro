@@ -15,83 +15,83 @@ interface Props {
 const { position, result, name, date, map, mode, duration } = Astro.props;
 ---
 
-<tr class='transition hover:bg-gray-800'>
-  <td class='text-right text-gray-300 font-bold pr-3 pl-3 w-0 sm:pl-8'>
+<tr class="transition hover:bg-gray-800">
+  <td class="text-right text-gray-300 font-bold pr-3 pl-3 w-0 sm:pl-8">
     {position}.
   </td>
 
-  <td class='flex gap-3 items-center py-5 pr-6 w-auto'>
+  <td class="flex gap-3 items-center py-5 pr-6 w-auto">
     <img
-      alt=''
-      class='w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+      alt=""
+      class="w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
       src={faker.image.food()}
     />
     <div>
-      <div class='font-bold text-yellow-800 whitespace-nowrap'>{map}</div>
-      <div class='text-sm'>
+      <div class="font-bold text-yellow-800 whitespace-nowrap">{map}</div>
+      <div class="text-sm">
         {mode} - {duration} -{' '}
-        <span class='text-green-300 font-bold'>{result}</span>
+        <span class="text-green-300 font-bold">{result}</span>
       </div>
     </div>
   </td>
 
-  <td class='px-3 w-auto sm:pr-8'>
+  <td class="px-3 w-auto sm:pr-8">
     <span>
       <img
-        alt=''
-        class='w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+        alt=""
+        class="w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
         src={faker.image.animals()}
       />
     </span>
     <span
-      class='cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline'
+      class="cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline"
     >
       {name}
     </span>
   </td>
 
-  <td class='items-center gap-3 px-3 w-auto sm:pr-8'>
-    <div class='flex flex-row justify-center items-center gap-3'>
-      <span class='flex flex-row justify-center items-center gap-2'>
+  <td class="items-center gap-3 px-3 w-auto sm:pr-8">
+    <div class="flex flex-row justify-center items-center gap-3">
+      <span class="flex flex-row justify-center items-center gap-2">
         {faker.datatype.number({ min: 1500, max: 3000 })}
-        <span class='flex flex-row text-green-300'>
-          <Icon class='w-4' name='mdi:arrow-up' />
+        <span class="flex flex-row text-green-300">
+          <Icon class="w-4" name="mdi:arrow-up" />
           {faker.datatype.number({ min: 10, max: 50 })}
         </span>
       </span>
       <span>vs</span>
-      <span class='flex flex-row justify-center items-center gap-2'>
+      <span class="flex flex-row justify-center items-center gap-2">
         {faker.datatype.number({ min: 1500, max: 3000 })}
-        <span class='flex flex-row text-red-300'>
-          <Icon class='w-4' name='mdi:arrow-down' />
+        <span class="flex flex-row text-red-300">
+          <Icon class="w-4" name="mdi:arrow-down" />
           {faker.datatype.number({ min: 10, max: 50 })}
         </span>
       </span>
     </div>
   </td>
 
-  <td class='px-3 w-auto sm:pr-8'>
+  <td class="px-3 w-auto sm:pr-8">
     <span>
       <img
-        alt=''
-        class='w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+        alt=""
+        class="w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
         src={faker.image.animals()}
       />
     </span>
     <span
-      class='cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline'
+      class="cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline"
     >
       {name}
     </span>
   </td>
 
-  <td class='text-gray-200 px-3 w-auto sm:pr-8'>
+  <td class="text-gray-200 px-3 w-auto sm:pr-8">
     {date.toLocaleDateString('en-GB')}
   </td>
 
-  <td class='text-gray-200 px-3 w-auto sm:pr-8'>
-    <button class='btn btn-primary flex flex-row justify-center items-center'>
-      <Icon class='w-4' name='mdi:arrow-right' />
+  <td class="text-gray-200 px-3 w-auto sm:pr-8">
+    <button class="btn btn-primary flex flex-row justify-center items-center">
+      <Icon class="w-4" name="mdi:arrow-right" />
     </button>
   </td>
 </tr>

@@ -14,22 +14,26 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
 }));
 ---
 
-<div class='rounded-3xl border border-gray-900 bg-gray-900 overflow-hidden flex-auto basis-3/5'>
-  <div class='py-8 px-6 flex flex-col gap-5 sm:p-8 md:flex-row md:items-center'>
-    <h2 class='flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100'>
-      <Icon class='h-12' name='mdi:trophy' />
-      <span class='ml-3'>Ladder</span>
+<div
+  class="rounded-3xl border border-gray-900 bg-gray-900 overflow-hidden flex-auto basis-3/5"
+>
+  <div class="py-8 px-6 flex flex-col gap-5 sm:p-8 md:flex-row md:items-center">
+    <h2
+      class="flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100"
+    >
+      <Icon class="h-12" name="mdi:trophy" />
+      <span class="ml-3">Ladder</span>
     </h2>
   </div>
-  <div class='overflow-x-auto'>
-    <table class='table-auto w-full whitespace-nowrap'>
+  <div class="overflow-x-auto">
+    <table class="table-auto w-full whitespace-nowrap">
       <thead>
-        <tr class='text-gray-400 text-left text-sm uppercase tracking-wider'>
-          <th class='font-normal text-right pr-3'>#</th>
-          <th class='font-normal'>Nickname</th>
-          <th class='font-normal px-3'>Fraction</th>
-          <th class='font-normal px-3'>Rating</th>
-          <th class='font-normal px-3'>Win %</th>
+        <tr class="text-gray-400 text-left text-sm uppercase tracking-wider">
+          <th class="font-normal text-right pr-3">#</th>
+          <th class="font-normal">Nickname</th>
+          <th class="font-normal px-3">Fraction</th>
+          <th class="font-normal px-3">Rating</th>
+          <th class="font-normal px-3">Win %</th>
         </tr>
       </thead>
       <tbody>
@@ -50,9 +54,9 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
     </table>
   </div>
   <a
-    class='btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full'
-    href='/#'
+    class="btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full"
+    href="/#"
     >Show full ladderboard
-    <Icon class='h-5' name='mdi:arrow-right' />
+    <Icon class="h-5" name="mdi:arrow-right" />
   </a>
 </div>

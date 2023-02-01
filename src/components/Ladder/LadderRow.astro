@@ -12,27 +12,29 @@ interface Props {
 const { position, name, race, rating, winRatio } = Astro.props;
 ---
 
-<tr class='transition hover:bg-gray-800 group'>
-  <td class='text-right text-gray-300 font-bold pr-3 pl-3 w-0 sm:pl-8'>{position}.</td>
-  <td class='flex gap-3 items-center py-5 pr-6 w-auto'>
+<tr class="transition hover:bg-gray-800 group">
+  <td class="text-right text-gray-300 font-bold pr-3 pl-3 w-0 sm:pl-8"
+    >{position}.</td
+  >
+  <td class="flex gap-3 items-center py-5 pr-6 w-auto">
     <a>
       <img
-        alt=''
-        class='h-6 w-6 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0'
+        alt=""
+        class="h-6 w-6 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
         src={faker.image.avatar()}
       />
     </a>
-    <a class='whitespace-nowrap'>
+    <a class="whitespace-nowrap">
       <span
-        class='cursor-pointer underline-offset-2 text-lg font-bold text-white whitespace-nowrap hover:underline'
+        class="cursor-pointer underline-offset-2 text-lg font-bold text-white whitespace-nowrap hover:underline"
       >
         {name}
       </span>
     </a>
   </td>
-  <td class='text-gray-200 px-3 w-12'>{race}</td>
-  <td class='text-gray-200 px-3 w-12'>
+  <td class="text-gray-200 px-3 w-12">{race}</td>
+  <td class="text-gray-200 px-3 w-12">
     {rating}
   </td>
-  <td class='text-gray-200 pl-3 pr-3 w-auto sm:pr-8'>{winRatio} %</td>
+  <td class="text-gray-200 pl-3 pr-3 w-auto sm:pr-8">{winRatio} %</td>
 </tr>
