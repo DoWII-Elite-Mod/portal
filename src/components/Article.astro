@@ -11,7 +11,7 @@ const tournamentClass = tournament ? 'border rounded border-yellow-300' : '';
 >
   <h2 class="text-base font-semibold tracking-tight text-zinc-100">
     <div
-      class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl"
+      class="absolute -inset-y-6 -inset-x-4 z-0 scale-95 bg-zinc-800/50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 sm:-inset-x-6 sm:rounded-2xl"
     >
     </div>
     <a href="/eldars">
@@ -24,7 +24,7 @@ const tournamentClass = tournament ? 'border rounded border-yellow-300' : '';
   {
     tournament ? (
       <div class="order-first flex flex-row items-center justify-between">
-        <time class="relative z-10 mb-3 flex items-center text-sm text-zinc-500 pl-3.5">
+        <time class="relative z-10 mb-3 flex items-center pl-3.5 text-sm text-zinc-500">
           <span
             class="absolute inset-y-0 left-0 flex items-center"
             aria-hidden="true"
@@ -34,13 +34,13 @@ const tournamentClass = tournament ? 'border rounded border-yellow-300' : '';
           {date}
         </time>
         <img
-          class="w-12 h-12"
+          class="h-12 w-12"
           alt=""
           src="/images/str_power_sword_aptit_large.png"
         />
       </div>
     ) : (
-      <time class="relative z-10 mb-3 order-first flex items-center text-sm text-zinc-500 pl-3.5">
+      <time class="relative z-10 order-first mb-3 flex items-center pl-3.5 text-sm text-zinc-500">
         <span
           class="absolute inset-y-0 left-0 flex items-center"
           aria-hidden="true"
@@ -54,7 +54,7 @@ const tournamentClass = tournament ? 'border rounded border-yellow-300' : '';
   <p class="relative z-10 mt-2 text-sm text-zinc-400">{content}</p>
   <div
     aria-hidden="true"
-    class="relative z-10 mt-4 flex items-center text-sm font-medium text-teal-500 gap-2"
+    class="relative z-10 mt-4 flex items-center gap-2 text-sm font-medium text-teal-500"
   >
     Read article {'>'}
   </div>

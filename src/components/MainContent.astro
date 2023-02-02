@@ -5,9 +5,9 @@ import Article from './Article.astro';
 ---
 
 <section class="w-full">
-  <div class="flex flex-col xl:flex-row gap-3 sm:gap-8">
+  <div class="flex flex-col gap-3 sm:gap-8 xl:flex-row">
     <Ladder />
-    <div class="rounded-3xl overflow-hidden flex-auto flex flex-col basis-2/5">
+    <div class="flex flex-auto basis-2/5 flex-col overflow-hidden rounded-3xl">
       {
         articles.map(({ title, content, date, tournament }) => (
           <Article

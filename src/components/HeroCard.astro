@@ -11,23 +11,23 @@ const { header, title, dateTime } = Astro.props;
 ---
 
 <div
-  class="cursor-pointer hover:bg-gray-800 overflow-hidden relative border-2 rounded-2xl w-full transition basis-1/2"
+  class="relative w-full basis-1/2 cursor-pointer overflow-hidden rounded-2xl border-2 transition hover:bg-gray-800"
 >
   <div
-    class="absolute top-0 left-0 bottom-0 right-0 opacity-80 brightness-75 contrast-150 mix-blend-multiply saturate-0 bg-center bg-cover bg-no-repeat"
+    class="absolute top-0 left-0 bottom-0 right-0 bg-cover bg-center bg-no-repeat opacity-80 mix-blend-multiply brightness-75 contrast-150 saturate-0"
   >
   </div>
   <a
-    class="p-3 sm:p-8 flex flex-col lg:flex-row items-center justify-center h-full lg:h-auto relative"
+    class="relative flex h-full flex-col items-center justify-center p-3 sm:p-8 lg:h-auto lg:flex-row"
   >
     <img
-      class="w-24 h-24 object-contain flex-none rounded"
+      class="h-24 w-24 flex-none rounded object-contain"
       alt=""
       src={getRandomFromArray(dowIcons)}
     />
-    <div class="px-8 flex-auto">
-      <h4 class="font-black text-sm uppercase opacity-60">{header}</h4>
-      <h2 class="font-black text-xl">{title}</h2>
+    <div class="flex-auto px-8">
+      <h4 class="text-sm font-black uppercase opacity-60">{header}</h4>
+      <h2 class="text-xl font-black">{title}</h2>
       <div>{dateTime}</div>
     </div>
   </a>
