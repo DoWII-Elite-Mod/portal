@@ -1,0 +1,21 @@
+---
+import Banner from '@/components/Player/Banner.astro';
+import RecentGames from '@/components/Player/RecentGames.astro';
+import Summary from '@/components/Player/Summary.astro';
+import Base from '@/templates/Base.astro';
+
+const { id } = Astro.params;
+
+const meta = {
+  title: 'Single player statistics',
+  description: 'This is single player stats page'
+};
+---
+
+<Base head={meta}>
+  <main class="pb-20 2xl:py-0 bg-gray-800">
+    <Banner />
+    <Summary />
+    <RecentGames />
+  </main>
+</Base>

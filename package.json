@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "clean": "rimraf dist",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.astro .",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,astro}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,astro}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,astro,scss} --config ./.prettierrc",
     "build-types": "tsc --noEmit --pretty",
     "prepare": "husky install"
   },
@@ -37,22 +39,24 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^4.1.2"
   },
   "dependencies": {
-    "@astrojs/image": "^0.11.6",
-    "@astrojs/react": "^1.2.2",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^2.1.2",
-    "astro": "1.6.7",
-    "astro-eslint-parser": "^0.9.0",
+    "@astrojs/image": "^0.13.0",
+    "@astrojs/react": "^2.0.0",
+    "@astrojs/tailwind": "^3.0.0",
+    "@astrojs/vercel": "^3.0.0",
+    "astro": "^2.0.1",
+    "astro-eslint-parser": "^0.11.0",
     "astro-icon": "^0.8.0",
-    "astro-imagetools": "^0.6.11",
-    "astro-robots-txt": "^0.3.10",
     "daisyui": "^2.46.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.2",
     "tailwindcss": "^3.2.4"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,astro}": "npm run lint",
+    "*.{js,jsx,ts,tsx,astro,md}": "npm run format"
   }
 }

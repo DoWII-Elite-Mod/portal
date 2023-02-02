@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'promo-one': "url('/static/sm.gif')"
+        'promo-one': "url('/images/sm.gif')"
       }
     },
     fontFamily: {
