@@ -1,4 +1,7 @@
 ---
+import { factionImageLinks, getRandomFromArray } from '@/utils';
+
+const randomFaction = getRandomFromArray(factionImageLinks);
 ---
 
 <div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
@@ -14,12 +17,8 @@
       <div
         class="flex flex-col items-center justify-between rounded-2xl p-4 bg-gray-900"
       >
-        <h4 class="text-white font-bold">Faction</h4>
-        <img
-          class="w-24 h-24"
-          alt=""
-          src="/images/str_power_sword_aptit_large.png"
-        />
+        <h4 class="text-white font-bold">Main Faction</h4>
+        <img class="h-16" alt="" src={randomFaction} />
         <div></div>
       </div>
     </div>

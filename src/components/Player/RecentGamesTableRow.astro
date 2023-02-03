@@ -1,5 +1,6 @@
 ---
 import { faker } from '@faker-js/faker';
+import { factionImageLinks, getRandomFromArray } from '@/utils';
 import { Icon } from 'astro-icon';
 
 interface Props {
@@ -23,7 +24,7 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   <td class="flex gap-3 items-center py-5 pr-6 w-auto">
     <img
       alt=""
-      class="w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
+      class="w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2"
       src={faker.image.food()}
     />
     <div>
@@ -39,8 +40,8 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
     <span>
       <img
         alt=""
-        class="w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
-        src={faker.image.animals()}
+        class="h-10 inline-block rounded outline-1 opacity-50 mr-2"
+        src={getRandomFromArray(factionImageLinks)}
       />
     </span>
     <span
@@ -71,13 +72,11 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   </td>
 
   <td class="px-3 w-auto sm:pr-8">
-    <span>
-      <img
-        alt=""
-        class="w-8 h-8 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
-        src={faker.image.animals()}
-      />
-    </span>
+    <img
+      alt=""
+      class="h-10 inline-block rounded outline-1 opacity-50 mr-2"
+      src={getRandomFromArray(factionImageLinks)}
+    />
     <span
       class="cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline"
     >

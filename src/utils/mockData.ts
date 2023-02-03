@@ -8,3 +8,13 @@ export const articles: Article[] = [
     date: 'September 5, 2022'
   }))
 ];
+
+export const factionImageLinks = [
+  'chaos',
+  'eldar',
+  'gk',
+  'ig',
+  'ork',
+  'sm',
+  'tyranid'
+].map((link) => `/images/factions/${link}.png`);
