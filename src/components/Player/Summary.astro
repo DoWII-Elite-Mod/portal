@@ -1,7 +1,7 @@
 ---
-import { factionImageLinks, getRandomFromArray } from '@/utils';
+import { generateFaction } from '@/utils';
 
-const randomFaction = getRandomFromArray(factionImageLinks);
+const playerMainFaction = generateFaction();
 ---
 
 <div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
@@ -18,7 +18,9 @@ const randomFaction = getRandomFromArray(factionImageLinks);
         class="flex flex-col items-center justify-between rounded-2xl p-4 bg-gray-900"
       >
         <h4 class="text-white font-bold">Main Faction</h4>
-        <img class="h-16" alt="" src={randomFaction} />
+        <div class="tooltip" data-tip={playerMainFaction.name}>
+          <img class="h-16" alt="" src={playerMainFaction.imgSrc} />
+        </div>
         <div></div>
       </div>
     </div>

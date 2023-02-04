@@ -1,5 +1,5 @@
 ---
-import { dowIcons } from '@/shared/consts';
+import { dowIconImgSrcs } from '@/shared/consts';
 import { getRandomFromArray } from '@/utils';
 interface Props {
   header: string;
@@ -23,7 +23,7 @@ const { header, title, dateTime } = Astro.props;
     <img
       class="h-24 w-24 flex-none rounded object-contain"
       alt=""
-      src={getRandomFromArray(dowIcons)}
+      src={getRandomFromArray(dowIconImgSrcs)}
     />
     <div class="flex-auto px-8">
       <h4 class="text-sm font-black uppercase opacity-60">{header}</h4>

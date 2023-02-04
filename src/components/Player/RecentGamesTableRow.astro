@@ -1,6 +1,6 @@
 ---
 import { faker } from '@faker-js/faker';
-import { factionImageLinks, getRandomFromArray } from '@/utils';
+import { generateFaction } from '@/utils';
 import { Icon } from 'astro-icon';
 
 interface Props {
@@ -14,6 +14,9 @@ interface Props {
 }
 
 const { position, result, name, date, map, mode, duration } = Astro.props;
+
+const playerFaction = generateFaction();
+const opponentFaction = generateFaction();
 ---
 
 <tr class="transition hover:bg-gray-800">
@@ -37,13 +40,13 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   </td>
 
   <td class="px-3 w-auto sm:pr-8">
-    <span>
+    <div class="tooltip" data-tip={playerFaction.name}>
       <img
         alt=""
         class="h-10 inline-block rounded outline-1 opacity-50 mr-2"
-        src={getRandomFromArray(factionImageLinks)}
+        src={playerFaction.imgSrc}
       />
-    </span>
+    </div>
     <span
       class="cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline"
     >
@@ -72,11 +75,13 @@ const { position, result, name, date, map, mode, duration } = Astro.props;
   </td>
 
   <td class="px-3 w-auto sm:pr-8">
-    <img
-      alt=""
-      class="h-10 inline-block rounded outline-1 opacity-50 mr-2"
-      src={getRandomFromArray(factionImageLinks)}
-    />
+    <div class="tooltip" data-tip={opponentFaction.name}>
+      <img
+        alt=""
+        class="h-10 inline-block rounded outline-1 opacity-50 mr-2"
+        src={opponentFaction.imgSrc}
+      />
+    </div>
     <span
       class="cursor-pointer underline-offset-2 text-lg font-bold text-white break-normal hover:underline"
     >
