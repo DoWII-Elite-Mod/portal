@@ -4,11 +4,12 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import image from '@astrojs/image';
-import vercel from '@astrojs/vercel/serverless';
+import node from '@astrojs/node';
 
+// https://astro.build/config
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: node({ mode: 'middleware' }),
   // base: '.', // Set a path prefix.
   site: 'https://example.com/',
   // Use to generate your sitemap and canonical URLs in your final build.
