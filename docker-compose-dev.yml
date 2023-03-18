@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  frontend:
+    depends_on: 
+      - db
+    image: frontend
+    container_name: frontend
+    build:
+      context: ./
+      dockerfile: ./Dockerfile_dev
+    init: true
+    ports:
+      - 3000:3000
+    volumes:
+      - type: bind
+        source: ./
+        target: /usr/src/app/
+      - type: volume
+        target: /usr/src/app/node_modules
+    environment:
+      - HOST=db
+      - API_PORT=3000
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB=elitemod
+      - BASE_URL=http://localhost:3000
+    restart: unless-stopped
+  db:
+    container_name: postgres_db
+    image: postgres:12-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../elitemod.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+    ports:
+      - 5432
+
+volumes:
+  pgdata:
