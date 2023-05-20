@@ -1,0 +1,16 @@
+---
+import RecentGames from '@/components/Player/RecentGames.astro';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+
+const { title } = AppConfig;
+const { description } = AppConfig;
+---
+
+<Base head={{ title, description }}>
+  <main class="p-4 md:p-8">
+    <div class="mx-auto max-w-screen-2xl">
+      <RecentGames />
+    </div>
+  </main>
+</Base>

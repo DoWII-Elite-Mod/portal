@@ -13,6 +13,24 @@ interface Props {
   date: Date;
 }
 
+interface RecentGame {
+  map: string;
+  mode: string;
+  durration: string | number;
+  result: string;
+  player: {
+    faction: string;
+    rating: number;
+    ratingChange: number;
+  },
+  opponent: {
+    faction: string;
+    rating: number;
+    ratingChange: number;
+  },
+  dateTime: string;
+}
+
 const { position, result, name, date, map, mode, duration } = Astro.props;
 
 const playerFaction = generateFaction();
