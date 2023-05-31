@@ -1,11 +1,22 @@
-# Portal
+# Fire up database
 
-- 🔥 Astro
-- 🎨 Tailwind CSS with aspect ratio and typography plugin
-- 🎉 TypeScript
-- ✏️ ESLint compatible with .astro files
-- 🛠 Prettier compatible with .astro files
-- 🦊 Husky
-- 🚫 lint-staged
-- 🚨 Commitlint
-- 🔼 Vercel
+```
+docker compose up -d
+```
+
+# Initialize database
+
+```
+sqlx database create
+sqlx migrate run
+```
+
+# Reset database
+
+```
+sqlx database drop
+sqlx migrate run
+```
+
+# Calculate ratings for games played
+docker exec -it portal-server-1 ./ratings

@@ -108,3 +108,6 @@ dist
 
 # Vercel build assets
 .vercel
+
+# Rust target assets
+target
