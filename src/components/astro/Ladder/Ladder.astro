@@ -1,0 +1,55 @@
+---
+import { Icon } from 'astro-icon';
+import { faker } from '@faker-js/faker';
+import { getRandomFromArray } from '@/utils';
+import { fractions } from '@/shared/consts';
+import { Table } from '@/components/react';
+import { columns } from './const';
+
+export interface IPlayer {
+  avatar: string;
+  name: string;
+  race: string;
+  rating: number;
+  winRatio: number;
+}
+
+// API call
+const players: Array<IPlayer> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  .map((_) => ({
+    name: faker.name.fullName(),
+    avatar: faker.image.avatar(),
+    race: getRandomFromArray(fractions),
+    rating: faker.datatype.number({ min: 500, max: 3000 }),
+    winRatio: faker.datatype.number({ min: 20, max: 100 })
+  }))
+  .sort((first, second) => second.rating - first.rating);
+---
+
+<div
+  class="flex-auto basis-3/5 overflow-hidden rounded-3xl border border-gray-900 bg-gray-900"
+>
+  <div class="flex flex-col gap-5 py-8 px-6 sm:p-8 md:flex-row md:items-center">
+    <h2
+      class="flex flex-row items-center whitespace-nowrap text-2xl font-bold text-zinc-100"
+    >
+      <Icon class="h-12" name="mdi:trophy" />
+      <span class="ml-3">Ladder</span>
+    </h2>
+  </div>
+  <Table
+    client:only="react"
+    data={players}
+    columns={columns}
+    rowCount={players.length}
+    rowCountText={'players'}
+    tableEmptyViewText={'no players'}
+    pageCount={1}
+  />
+  <a
+    class="group btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-zinc-800/50 py-2 px-3 text-sm font-medium outline-offset-2 transition active:transition-none"
+    href="/#"
+    >Show full ladderboard
+    <Icon class="h-5" name="mdi:arrow-right" />
+  </a>
+</div>
