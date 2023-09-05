@@ -1,0 +1,18 @@
+[package]
+name = "ratings"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+database = { path = "../database" }
+sqlx = { version = "0.6.3", features = ["postgres", "runtime-tokio-native-tls", "chrono", "bigdecimal", "json", "uuid"]}
+tokio = { version = "1.26.0", features = ["full"] }
+serde = { version = "1.0.158", features = ["serde_derive"] }
+chrono = { version = "0.4.24", features = ["serde"] }
+thiserror = "1.0.40"
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
+skillratings = "0.24.0"
+itertools = "0.10.5"

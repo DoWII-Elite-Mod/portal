@@ -1,0 +1,47 @@
+version: '3.0'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    ports:
+      - 3001:3000
+    networks:
+      - dawnofwar
+    depends_on:
+      - db
+      - server
+
+  server:
+    build:
+      context: ./server
+      dockerfile: ./Dockerfile
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - CARGO_REGISTRIES_CRATES_IO_PROTOCOL=sparse
+      - DATABASE_URL=postgres://postgres:postgres@db
+    entrypoint: ./rust-dawnofwar
+    ports:
+      - 3000:3000
+    networks:
+      - dawnofwar
+    depends_on:
+      - db
+
+  db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dawnofwar
+    ports:
+      - 5432:5432
+
+volumes:
+  postgres_data:
+networks:
+  dawnofwar:

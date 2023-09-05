@@ -4,11 +4,11 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 import image from '@astrojs/image';
-import vercel from '@astrojs/vercel/serverless';
+import node from '@astrojs/node';
 
 export default defineConfig({
   output: 'server',
-  adapter: vercel(),
+  adapter: node({ mode: 'standalone' }),
   // base: '.', // Set a path prefix.
   site: 'https://example.com/',
   markdown: {
