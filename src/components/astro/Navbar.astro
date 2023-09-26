@@ -1,68 +1,15 @@
 ---
+import {Button} from '@/components/ui/button';
+
 const navigationItems = ['Codex', 'Ladder', 'Elite', 'Forum'];
 ---
 
-<div class="navbar sticky top-0 z-50 bg-gray-900 px-4 md:px-8">
-  <div class="navbar-start">
-    <a href="https://dawnofwar.info/" class="-ml-[-0.1rem] flex items-center">
-      <img
-        src="/images/badge.png"
-        class="mr-3 h-10 sm:h-9"
-        alt="Elitemod Logo"
-      />
-      <span
-        class="self-center whitespace-nowrap text-xl font-semibold text-white"
-      >
-        {' '}Elitemod
-      </span>
-    </a>
+<nav class="flex flex-row items-center justify-between p-4 rounded-xl z-40">
+  <a href="#"> <img class="object-contain h-12 w-12" src="/images/badge.png" alt="" /></a>
+  <div class="flex items-center mb-4 md:block">
+    {navigationItems.map(item => (
+      <a class="font-semibold hover:text-white text-gray-300 mr-8" href="#">{item}</a>
+    ))}
+    <a><Button>DOWNLOAD</Button></a>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      {
-        navigationItems.map((item) => (
-          <li>
-            <a>{item}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <a class="btn invisible bg-blue-700 text-white sm:visible">
-      Download Elitemod
-    </a>
-    <div class="dropdown-end dropdown">
-      <label
-        tabindex="0"
-        class="btn-ghost btn mr-2 focus:bg-blue-700 lg:hidden"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"></path>
-        </svg>
-      </label>
-      <ul
-        tabindex="0"
-        class="dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-gray-900 p-2 shadow"
-      >
-        {
-          navigationItems.map((item) => (
-            <li>
-              <a>{item}</a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
-</div>
+</nav>

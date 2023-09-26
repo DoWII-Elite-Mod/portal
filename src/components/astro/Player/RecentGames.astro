@@ -1,20 +1,19 @@
 ---
-import { Icon } from 'astro-icon';
 import RecentGamesTableRow from './RecentGamesTableRow.astro';
 import { faker } from '@faker-js/faker';
 
 // API call
 const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
-  name: faker.name.fullName(),
-  map: faker.address.city(),
+  name: faker.person.fullName(),
+  map: faker.location.city(),
   mode: '1v1',
   result: 'Win',
-  duration: `${faker.datatype.number({ min: 1, max: 100 })}m`,
+  duration: `${faker.number.int({ min: 1, max: 100 })}m`,
   date: faker.date.past()
 }));
 ---
 
-<div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
+<div class="p-4 md:p-8 lg:px-8  relative">
   <div
     class="rounded-3xl border border-gray-900 bg-gray-900 overflow-hidden flex-auto basis-3/5"
   >
@@ -24,7 +23,6 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
       <h2
         class="flex flex-row items-center font-bold text-2xl whitespace-nowrap text-zinc-100"
       >
-        <Icon class="h-12" name="mdi:clipboard-text-date-outline" />
         <span class="ml-3">Recent Games</span>
       </h2>
     </div>
@@ -67,7 +65,7 @@ const players = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((_) => ({
       class="btn inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-800/50 font-medium group mt-6 w-full"
       href="/#"
     >
-      Show more games<Icon class="h-5" name="mdi:arrow-right" />
+      Show more games
     </a>
   </div>
 </div>

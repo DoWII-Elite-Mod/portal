@@ -1,7 +1,6 @@
 ---
 import { faker } from '@faker-js/faker';
 import { generateFaction } from '@/utils';
-import { Icon } from 'astro-icon';
 
 interface Props {
   position: number;
@@ -22,12 +21,12 @@ interface RecentGame {
     faction: string;
     rating: number;
     ratingChange: number;
-  },
+  };
   opponent: {
     faction: string;
     rating: number;
     ratingChange: number;
-  },
+  };
   dateTime: string;
 }
 
@@ -46,7 +45,7 @@ const opponentFaction = generateFaction();
     <img
       alt=""
       class="w-20 h-20 inline-block rounded outlineoutline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2"
-      src={faker.image.food()}
+      src={faker.image.urlLoremFlickr({ category: 'food' })}
     />
     <div>
       <div class="font-bold text-yellow-800 whitespace-nowrap">{map}</div>
@@ -75,18 +74,16 @@ const opponentFaction = generateFaction();
   <td class="items-center gap-3 px-3 w-auto sm:pr-8">
     <div class="flex flex-row justify-center items-center gap-3">
       <span class="flex flex-row justify-center items-center gap-2">
-        {faker.datatype.number({ min: 1500, max: 3000 })}
+        {faker.number.int({ min: 1500, max: 3000 })}
         <span class="flex flex-row text-green-300">
-          <Icon class="w-4" name="mdi:arrow-up" />
-          {faker.datatype.number({ min: 10, max: 50 })}
+          {faker.number.int({ min: 10, max: 50 })}
         </span>
       </span>
       <span>vs</span>
       <span class="flex flex-row justify-center items-center gap-2">
-        {faker.datatype.number({ min: 1500, max: 3000 })}
+        {faker.number.int({ min: 1500, max: 3000 })}
         <span class="flex flex-row text-red-300">
-          <Icon class="w-4" name="mdi:arrow-down" />
-          {faker.datatype.number({ min: 10, max: 50 })}
+          {faker.number.int({ min: 10, max: 50 })}
         </span>
       </span>
     </div>
@@ -113,7 +110,7 @@ const opponentFaction = generateFaction();
 
   <td class="text-gray-200 px-3 w-auto sm:pr-8">
     <button class="btn btn-primary flex flex-row justify-center items-center">
-      <Icon class="w-4" name="mdi:arrow-right" />
+      a
     </button>
   </td>
 </tr>

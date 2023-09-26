@@ -1,8 +1,8 @@
 ---
-import Banner from '@/components/astro/Player/Banner.astro';
-import RecentGames from '@/components/astro/Player/RecentGames.astro';
-import Summary from '@/components/astro/Player/Summary.astro';
-import Base from '@/templates/Base.astro';
+import Banner from '../../components/astro/Player/Banner.astro';
+import RecentGames from '../../components/astro/Player/RecentGames.astro';
+import Summary from '../../components/astro/Player/Summary.astro';
+import Base from '../../templates/Base.astro';
 
 const { id } = Astro.params;
 
@@ -13,9 +13,7 @@ const meta = {
 ---
 
 <Base head={meta}>
-  <main class="bg-gray-800 pb-20 2xl:py-0">
-    <Banner />
-    <Summary />
-    <RecentGames />
-  </main>
+  <Banner />
+  <Summary />
+  <RecentGames />
 </Base>

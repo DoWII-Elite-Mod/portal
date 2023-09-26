@@ -1,4 +1,5 @@
 ---
+import '@/styles/globals.css';
 import Footer from '@/components/astro/Footer.astro';
 import Navbar from '@/components/astro/Navbar.astro';
 import { AppConfig } from '@/utils/AppConfig';
@@ -23,8 +24,7 @@ const {
     <meta name="description" content={description} />
     <meta name="author" content={AppConfig.author} />
 
-    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.svg" />
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -35,7 +35,7 @@ const {
     />
   </head>
   <body
-    class="flex flex-col bg-zinc-50 bg-gradient-to-tl from-gray-900 to-black"
+    class="container bg-gradient-to-tl from-slate-400 via-slate-900 to-black text-gray-200"
   >
     <Navbar />
     <slot />
