@@ -9,10 +9,240 @@ const { description } = AppConfig;
 ---
 
 <Base head={{ title, description }}>
-  <main class="p-4 md:p-8">
-    <div class="mx-auto max-w-screen-2xl">
-      <Hero />
-      <MainContent />
-    </div>
+  <main
+    class="grid
+      gap-12
+      overflow-hidden
+      px-8
+      sm:gap-16
+      md:gap-24
+      lg:gap-32"
+  >
+    <section aria-labelledby="qualities">
+      <h2 id="qualities" class="sr-only">Our Qualities</h2>
+      <div
+        class="container
+          mx-auto
+          flex
+          max-w-5xl
+          flex-wrap
+          items-start
+          justify-center
+          gap-12
+          md:justify-between"
+      >
+        <div
+          class="grid
+          justify-items-center
+          gap-4
+          text-center
+          md:flex-1"
+        >
+          <div
+            class="rounded-full
+              border-8
+              border-amber-400
+              p-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-14 w-14"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold">Safe</h3>
+          <p>Our products are secure and private out-of-the-box</p>
+        </div>
+        <div
+          class="grid
+          justify-items-center
+          gap-4
+          text-center
+          md:flex-1"
+        >
+          <div
+            class="rounded-full
+            border-8
+            border-amber-400
+            p-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-14 w-14"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold">Efficient</h3>
+          <p>Feel good about your wallet and the environment</p>
+        </div>
+        <div
+          class="grid
+          justify-items-center
+          gap-4
+          text-center
+          md:flex-1"
+        >
+          <div
+            class="rounded-full
+            border-8
+            border-amber-400
+            p-4"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-14 w-14"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              ></path>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold">Proven</h3>
+          <p>Leading the Smart Home world for 10 years</p>
+        </div>
+      </div>
+    </section>
+    <section
+      aria-labelledby="partners"
+      class="grid place-items-center gap-8 text-center"
+    >
+      <div class="grid gap-4">
+        <h2 id="partners" class="text-4xl font-bold text-amber-400">
+          Our Partners
+        </h2>
+        <p class="w-full max-w-lg">
+          We’ve partnered with hundreds of smart home brands to help you create
+          a smart home that fits your needs and doesn’t lock you in.
+        </p>
+      </div>
+      <div
+        class="mx-auto flex max-w-2xl flex-wrap justify-center gap-8 md:gap-x-16"
+      >
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner1.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner2.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner3.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner4.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner5.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner6.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+        <div
+          class="rounded-md bg-white p-4 shadow-md dark:bg-neutral-600 dark:shadow-xl"
+        >
+          <img src="/images/partner7.svg" alt="Partner" class="h-16 w-16" />
+        </div>
+      </div>
+    </section>
+    <section aria-labelledby="home" class="relative">
+      <div class="flex flex-wrap-reverse justify-center gap-8">
+        <div
+          class="flex flex-col flex-wrap items-start gap-6 lg:justify-center"
+        >
+          <div class="flex flex-col flex-wrap items-start gap-2">
+            <h2 class="text-4xl font-bold">Relax, you’re home!</h2>
+            <p class="max-w-md">
+              All our supported hardware includes traditional inputs so you can
+              integrate our products into your house in a way that’s best for
+              everyone.
+            </p>
+          </div>
+          <a
+            href="#"
+            class="flex
+              gap-2
+              rounded-md
+              bg-amber-400
+              px-6
+              py-2
+              shadow-xl
+              ring-neutral-900
+              ring-offset-4
+              ring-offset-white
+              transition-shadow
+              hover:shadow-none
+              focus:outline-none
+              focus-visible:ring-4
+              dark:text-neutral-900
+              dark:ring-amber-400
+              dark:ring-offset-neutral-800"
+          >
+            Sign Up
+          </a>
+        </div>
+        <img class="w-80" src="/images/space-marine-hero.png" alt="Table" />
+      </div>
+      <div
+        class="absolute
+          -bottom-6
+          -right-32
+          -z-10
+          aspect-square
+          rounded-full
+          border-amber-400
+          md:w-64
+          md:border-8
+          lg:w-96
+          xl:max-w-lg"
+      >
+      </div>
+      <div
+        class="-bottom-8
+          -z-10
+          -mx-8
+          mt-12
+          h-24
+          w-screen
+          bg-teal-900
+          xl:absolute
+          xl:mt-0
+          xl:h-48"
+      >
+      </div>
+    </section>
   </main>
 </Base>

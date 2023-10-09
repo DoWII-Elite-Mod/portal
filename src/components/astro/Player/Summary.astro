@@ -4,20 +4,20 @@ import { generateFaction } from '@/utils';
 const playerMainFaction = generateFaction();
 ---
 
-<div class="p-4 md:p-8 max-w-screen-2xl lg:px-8 mx-auto relative">
-  <div class="flex flex-wrap gap-3 justify-center">
+<div class="relative mx-auto max-w-screen-2xl p-4 md:p-8 lg:px-8">
+  <div class="flex flex-wrap justify-center gap-3">
     <div class="flex gap-3">
       <div
-        class="flex flex-col items-center justify-between rounded-2xl p-4 bg-gray-900"
+        class="flex flex-col items-center justify-between rounded-2xl bg-gray-900 p-4"
       >
-        <h4 class="text-white font-bold">Ladder No.</h4>
-        <span class="font-bold text-6xl">6</span>
+        <h4 class="font-bold text-white">Ladder No.</h4>
+        <span class="text-6xl font-bold">6</span>
         <div></div>
       </div>
       <div
-        class="flex flex-col items-center justify-between rounded-2xl p-4 bg-gray-900"
+        class="flex flex-col items-center justify-between rounded-2xl bg-gray-900 p-4"
       >
-        <h4 class="text-white font-bold">Main Faction</h4>
+        <h4 class="font-bold text-white">Main Faction</h4>
         <div class="tooltip" data-tip={playerMainFaction.name}>
           <img class="h-16" alt="" src={playerMainFaction.imgSrc} />
         </div>
@@ -25,56 +25,56 @@ const playerMainFaction = generateFaction();
       </div>
     </div>
 
-    <div class="flex flex-wrap gap-3 justify-center">
-      <div class="rounded-2xl p-4 bg-gray-900">
+    <div class="flex flex-wrap justify-center gap-3">
+      <div class="rounded-2xl bg-gray-900 p-4">
         <div class="flex items-center">
-          <h4 class="flex-auto text-white font-bold">Ranked Games Rating</h4>
+          <h4 class="flex-auto font-bold text-white">Ranked Games Rating</h4>
         </div>
-        <table class="table-auto whitespace-nowrap mt-4">
+        <table class="mt-4 table-auto whitespace-nowrap">
           <thead>
             <tr class="text-left text-xs uppercase tracking-wider">
-              <th class="font-bold py-1 px-2 pl-0">Mode</th>
-              <th class="font-bold py-1 px-2">Rating</th>
-              <th class="font-bold py-1 px-2 pr-0">Win Rate</th>
+              <th class="px-2 py-1 pl-0 font-bold">Mode</th>
+              <th class="px-2 py-1 font-bold">Rating</th>
+              <th class="px-2 py-1 pr-0 font-bold">Win Rate</th>
             </tr>
           </thead>
           <tbody>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">1v1</div>
+                  <div class="flex-auto pl-1 text-right">1v1</div>
                 </div>
               </td>
               <td class="p-2">2152</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">84.3%</span>
-                <span class="inline-block mr-2 text-green-300">419W</span>
+                <span class="mr-2 inline-block">84.3%</span>
+                <span class="mr-2 inline-block text-green-300">419W</span>
                 <span class="inline-block text-red-300">78L</span>
               </td>
             </tr>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">2v2</div>
+                  <div class="flex-auto pl-1 text-right">2v2</div>
                 </div>
               </td>
               <td class="p-2">-</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">100.0%</span>
-                <span class="inline-block mr-2 text-green-300">2W</span>
+                <span class="mr-2 inline-block">100.0%</span>
+                <span class="mr-2 inline-block text-green-300">2W</span>
                 <span class="inline-block text-red-300">0L</span>
               </td>
             </tr>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">3v3</div>
+                  <div class="flex-auto pl-1 text-right">3v3</div>
                 </div>
               </td>
               <td class="p-2">-</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">100.0%</span>
-                <span class="inline-block mr-2 text-green-300">2W</span>
+                <span class="mr-2 inline-block">100.0%</span>
+                <span class="mr-2 inline-block text-green-300">2W</span>
                 <span class="inline-block text-red-300">0L</span>
               </td>
             </tr>
@@ -83,55 +83,55 @@ const playerMainFaction = generateFaction();
       </div>
 
       <!-- --- -->
-      <div class="rounded-2xl p-4 bg-gray-900">
+      <div class="rounded-2xl bg-gray-900 p-4">
         <div class="flex items-center">
-          <h4 class="flex-auto text-white font-bold">Top Opponents</h4>
+          <h4 class="flex-auto font-bold text-white">Top Opponents</h4>
         </div>
-        <table class="table-auto whitespace-nowrap mt-4">
+        <table class="mt-4 table-auto whitespace-nowrap">
           <thead>
             <tr class="text-left text-xs uppercase tracking-wider">
-              <th class="font-bold py-1 px-2 pl-0">Player</th>
-              <th class="font-bold py-1 px-2">Games</th>
-              <th class="font-bold py-1 px-2 pr-0">Win Rate</th>
+              <th class="px-2 py-1 pl-0 font-bold">Player</th>
+              <th class="px-2 py-1 font-bold">Games</th>
+              <th class="px-2 py-1 pr-0 font-bold">Win Rate</th>
             </tr>
           </thead>
           <tbody>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">life</div>
+                  <div class="flex-auto pl-1 text-right">life</div>
                 </div>
               </td>
               <td class="p-2">1265</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">84.3%</span>
-                <span class="inline-block mr-2 text-green-300">419W</span>
+                <span class="mr-2 inline-block">84.3%</span>
+                <span class="mr-2 inline-block text-green-300">419W</span>
                 <span class="inline-block text-red-300">78L</span>
               </td>
             </tr>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">life</div>
+                  <div class="flex-auto pl-1 text-right">life</div>
                 </div>
               </td>
               <td class="p-2">2</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">100.0%</span>
-                <span class="inline-block mr-2 text-green-300">2W</span>
+                <span class="mr-2 inline-block">100.0%</span>
+                <span class="mr-2 inline-block text-green-300">2W</span>
                 <span class="inline-block text-red-300">0L</span>
               </td>
             </tr>
             <tr class="text-sm">
               <td class="p-2 pl-0">
                 <div class="flex items-center">
-                  <div class="text-right pl-1 flex-auto">life</div>
+                  <div class="flex-auto pl-1 text-right">life</div>
                 </div>
               </td>
               <td class="p-2">2</td>
               <td class="p-2 pr-0">
-                <span class="inline-block mr-2">100.0%</span>
-                <span class="inline-block mr-2 text-green-300">2W</span>
+                <span class="mr-2 inline-block">100.0%</span>
+                <span class="mr-2 inline-block text-green-300">2W</span>
                 <span class="inline-block text-red-300">0L</span>
               </td>
             </tr>

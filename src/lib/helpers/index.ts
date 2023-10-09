@@ -1,1 +1,1 @@
-export * from './getIconForFaction.ts'
+export * from './getIconForFaction';

@@ -38,7 +38,7 @@ const players: Array<IPlayer> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 <div
   class="flex-auto basis-3/5 overflow-hidden rounded-3xl border border-gray-900 bg-gray-900"
 >
-  <div class="flex flex-col gap-5 py-8 px-6 sm:p-8 md:flex-row md:items-center">
+  <div class="flex flex-col gap-5 px-6 py-8 sm:p-8 md:flex-row md:items-center">
     <h2
       class="flex flex-row items-center whitespace-nowrap text-2xl font-bold text-zinc-100"
     >
@@ -61,18 +61,18 @@ const players: Array<IPlayer> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
             <TableCell className="flex flex-row gap-3 items-center">
               {idx + 1}.
               <img
-                class="h-6 w-6 inline-block rounded outline-1 opacity-50 outline-black/70 group-hover:opacity-100 mr-2 md:mr-0"
+                class="mr-2 inline-block h-6 w-6 rounded opacity-50 outline-1 outline-black/70 group-hover:opacity-100 md:mr-0"
                 alt={`This is ${player.name} avatar`}
                 src={player.avatar}
               />
-              <span class="cursor-pointer underline-offset-2 text-lg font-bold text-white whitespace-nowrap hover:underline">
+              <span class="cursor-pointer whitespace-nowrap text-lg font-bold text-white underline-offset-2 hover:underline">
                 {player.name}
               </span>
             </TableCell>
             <TableCell className="text-center">
               <Tooltip content={player.faction}>
                 <img
-                  class="h-6 w-6 object-contain cursor-pointer"
+                  class="h-6 w-6 cursor-pointer object-contain"
                   alt={`This is a faction thumbnail for player ${player.name}`}
                   src={getIconForFaction(player.faction)}
                 />
@@ -86,7 +86,7 @@ const players: Array<IPlayer> = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     </TableBody>
   </Table>
   <a
-    class="group btn mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-zinc-800/50 py-2 px-3 text-sm font-medium outline-offset-2 transition active:transition-none"
+    class="btn group mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-zinc-800/50 px-3 py-2 text-sm font-medium outline-offset-2 transition active:transition-none"
     href="/#"
     >Show full ladderboard
   </a>
