@@ -49,3 +49,20 @@ sqlx migrate run
 
 1. Calculate ratings for games played
 docker exec -it portal-server-1 ./ratings
+
+# Public API Routes
+
+## Players
+
+- GET /players - List of players (paginated)
+- GET /players/:id - Single player details
+- POST /players - Add new player details
+
+## Games
+
+- GET /games - List of games (paginated)
+- GET /games/:id - Single game details
+
+## Game result upload
+
+- POST /reports - Report results of a single game
